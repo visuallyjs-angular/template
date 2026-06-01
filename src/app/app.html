@@ -1,0 +1,18 @@
+<div class="vjs-template">
+  <div vjs-palette class="vjs-demo-palette">
+    @for(g of greetings; track g) {
+      <div data-vjs-type="hello" [attr.data-vjs-label]="g.h" class="vjs-hello" [attr.data-vjs-lang]="g.lang">{{g.h}}</div>
+    }
+
+    @for(g of greetings; track g) {
+      <div data-vjs-type="world" [attr.data-vjs-label]="g.w" class="vjs-world" [attr.data-vjs-lang]="g.lang">{{g.w}}</div>
+    }
+
+  </div>
+  <vjs-surface url="/dataset.json" [viewOptions]="viewOptions" [renderOptions]="renderOptions" [modelOptions]="modelOptions">
+    <vjs-controls/>
+    <vjs-miniview/>
+  </vjs-surface>
+
+
+</div>
