@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { VisuallyJsModule } from "@visuallyjs/browser-ui-angular";
+import { Component, inject } from '@angular/core';
+import {useZoom, VisuallyJsModule, VisuallyJsService} from "@visuallyjs/browser-ui-angular";
 
 import renderOptions from "./render-options"
 import viewOptions from "./view-options"
@@ -12,6 +12,10 @@ import greetings from "./greetings"
   templateUrl: './app.html'
 })
 export class App {
+  // example: inject the vjs service
+  $vjs = inject(VisuallyJsService)
+  // and listen to the useZoom hook
+  zoom = useZoom(this.$vjs.surface)
 
   renderOptions = renderOptions
   viewOptions= viewOptions
